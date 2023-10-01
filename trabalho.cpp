@@ -384,7 +384,6 @@ public:
   {
     for (int i = 0; i < countDisponiveis; i += 2)
     {
-      cout << countDisponiveis << " valor i" << i << endl;
       if (
           (i + 1) >= countDisponiveis ||
           (personagens[i] == nullptr || personagens[i + 1] == nullptr))
