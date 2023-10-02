@@ -567,7 +567,6 @@ public:
     }
 
     cout << "Total derrotados " << this->derrotados << endl;
-    ;
   }
 
   void iniciar()
@@ -579,6 +578,7 @@ public:
 
       turn.iniciarTurno();
       calcularDerrotados();
+      cout << "Pressione enter para continuar...";
       cin.get();
 
       contTurno++;
