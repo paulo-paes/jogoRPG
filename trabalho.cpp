@@ -28,6 +28,7 @@ protected:
   int roundsSangramento = 0; // Rounds restantes
   int danoRecebidoRound = 0;
   int danoCausadoRound = 0;
+  int atqEspecialRound = 0;
 
 public:
   Personagem(string nome, int vida, int ataque, int defesa)
@@ -135,6 +136,10 @@ public:
     return defesa;
   }
 
+  int getAtqEspecialRound() {
+    return this->atqEspecialRound;
+  }
+
   void adicionarDanoCausado(int dano)
   {
     if (dano > 0)
@@ -188,6 +193,7 @@ public:
     {
       dano = ataqueEspecial() - alvo->getDefesa();
       alvo->ligarSangramento();
+      atqEspecialRound += 1;
     }
     else
     {
@@ -231,6 +237,7 @@ public:
     this->vida = _vida;
     this->danoCausadoRound = 0;
     this->danoRecebidoRound = 0;
+    this->atqEspecialRound = 0;
   }
 
   virtual string getClasse()
@@ -443,8 +450,12 @@ public:
 
       cout << "Combate Encerrado" << endl;
       cout << "Rounds: " << round << endl;
-      cout << atacante->getNome() << " causou " << atacante->getDanoRound() << " de dano e recebeu " << atacante->getDanoRecebidoRound() << endl;
-      cout << alvo->getNome() << " causou " << alvo->getDanoRound() << " de dano e recebeu " << alvo->getDanoRecebidoRound() << endl;
+      cout << atacante->getNome() << " causou " << atacante->getDanoRound();
+      cout << " de dano e recebeu " << atacante->getDanoRecebidoRound() << endl;
+      cout << "Quantidade de ataques especiais neste turno: " << atacante->getAtqEspecialRound() << endl;
+      cout << alvo->getNome() << " causou " << alvo->getDanoRound();
+      cout << " de dano e recebeu " << alvo->getDanoRecebidoRound() << endl;
+      cout << "Quantidade de ataques especiais neste turno: " << alvo->getAtqEspecialRound() << endl;
 
       Personagem *vencedor = nullptr;
       Personagem *derrotado = nullptr;
