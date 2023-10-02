@@ -13,7 +13,7 @@ Um turno acaba quando todos os personagens lutam
 
 ## O que foi implementado:
 
-Foram implementados todos os requisitos exigidos, exceto a contagem de Ataque especiais por round.
+Foram implementados todos os requisitos exigidos
 
 Existem 6 Arquetipos disponíveis Guerreiro, Arqueiro, Bruxo, Monge, Clérigo e Ladrão.
 O código principal está na classe Personagem que os arquetipos herdam.
