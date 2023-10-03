@@ -516,13 +516,13 @@ private:
 public:
   JogoRPG()
   {
-    srand(static_cast<unsigned>(time(nullptr))); // Inicializar a semente para números aleatórios
+    srand(static_cast<unsigned>(time(nullptr)));
 
     for (int i = 0; i < tamanho; i++)
     {
-      int vida = rand() % 101 + 15; // Números aleatórios de 0 a 100 para vida
-      int ataque = rand() % 31;     // Números aleatórios de 0 a 30 para ataque
-      int defesa = rand() % 16;     // Números aleatórios de 0 a 15 para defesa
+      int vida = rand() % 101 + 15;
+      int ataque = rand() % 31;
+      int defesa = rand() % 16;
       this->criarPersonagem("Personagem " + to_string(i), vida + 1, ataque + 1, defesa + 1);
     }
   }
@@ -571,17 +571,17 @@ public:
 
   void iniciar()
   {
-    int contTurno = 1;
+    int countTurno = 1;
     while (tamanho - derrotados > 1)
     {
-      Turno turn = Turno(this->personagens, contTurno);
+      Turno turn = Turno(this->personagens, countTurno);
 
       turn.iniciarTurno();
       calcularDerrotados();
       cout << "Pressione enter para continuar...";
       cin.get();
 
-      contTurno++;
+      countTurno++;
     }
 
     int vencedorIndex = -1;
