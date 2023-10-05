@@ -232,12 +232,14 @@ public:
     }
   }
 
-  void resetVida()
+  void resetStats()
   {
     this->vida = _vida;
     this->danoCausadoRound = 0;
     this->danoRecebidoRound = 0;
     this->atqEspecialRound = 0;
+    this->sangramento = false;
+    this->roundsSangramento = 0;
   }
 
   virtual string getClasse()
@@ -498,7 +500,7 @@ public:
         cout << derrotado->getNome() << " foi derrotado!" << endl;
         vencedor->adicionarDerrotado(derrotado);
         vencedor->exibirEstatisticas();
-        vencedor->resetVida();
+        vencedor->resetStats();
       }
     }
     cout << "FIM DO TURNO " << nTurno << endl;
