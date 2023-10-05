@@ -2,6 +2,10 @@
 
 gcc -o trabalho trabalho.cpp -lstdc++
 
+or
+
+g++ -o trabalho trabalho.cpp
+
 ./trabalho
 
 ## Anotações
